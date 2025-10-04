@@ -16,7 +16,7 @@ Este repositório serve como base para avaliação de **abordagem técnica** e *
 
 - [Docker](https://www.docker.com/) + [Docker Compose](https://docs.docker.com/compose/)
 - [PostgreSQL 16](https://www.postgresql.org/)
-- [Node.js](https://nodejs.org/) / [TypeScript](https://www.typescriptlang.org/) _(ou outra stack definir...)_
+- [Node.js](https://nodejs.org/) / [TypeScript](https://www.typescriptlang.org/)
 - Boas práticas de versionamento: Git + GitHub
 
 ---
