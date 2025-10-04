@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Professional } from '../..//modules/professionals/entities/professional.entity';
+import { Scheduling } from '../..//modules/schedulings/entities/scheduling.entity';
+import { User } from '../../modules/users/entities/user.entity';
 import { EnvironmentConfigModule } from '../config/env/environment-config.module';
 import { EnvironmentConfigService } from '../config/env/environment-config.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '../../modules/users/entities/user.entity';
 
 @Module({
   imports: [
@@ -16,11 +18,11 @@ import { User } from '../../modules/users/entities/user.entity';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        entities: [User],
+        entities: [User, Professional, Scheduling],
         synchronize: true,
       }),
     }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User, Professional, Scheduling]),
   ],
   exports: [TypeOrmModule],
 })
